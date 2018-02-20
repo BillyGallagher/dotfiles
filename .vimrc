@@ -1,8 +1,11 @@
-syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
 set number
 set relativenumber
 set autoindent
 set smarttab
 set expandtab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
+color elflord
