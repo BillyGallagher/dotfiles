@@ -89,5 +89,17 @@
 ;; Show matching parentheses
 (show-paren-mode t)
 
-;; One of the most useful things I've discovered
+;; Undo/Redo window changes
 (winner-mode 1)
+
+;; Change yes-or-no prompts to y-or-n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Remove confirmation from revert-buffer, and bind to key
+;; Found in https://www.emacswiki.org/emacs/misc-cmds.el
+(defun revert-buffer-no-confirm ()
+  "Revert buffer without confirmation."
+  (interactive)
+  (revert-buffer :ignore-auto :noconfirm))
+
+(global-set-key (kbd "C-x o") 'revert-buffer-no-confirm)
